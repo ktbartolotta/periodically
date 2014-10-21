@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+    <title>Hello, Periodically!</title>
+</head>
+<body>
+    {% for word in words %}
+    <table>
+        <tr>
+            {% for w in word %}
+            <td>
+                <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;">
+                    <div style="font-size:1em">{{ w.name }}</div>
+                    <div style="font-size:1.25em">{{ w.atomic_no }}</div>
+                    <div style="font-size:1.75em;font-weight:bold;">{{ w.symbol }}</div>
+                    <div style="font-size:1em">{{ w.atomic_wt }}</div>
+                </div>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+    {% endfor %}
+</body>
