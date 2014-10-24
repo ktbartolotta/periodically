@@ -1,11 +1,28 @@
 <!doctype html>
 <head>
     <title>Hello, Periodically!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 <body>
-    <form action="/add" method="POST">
-        <input name="word_entry" id="word-entry" type="text" />
-    </form>
-    {% block body %}{% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 jumbotron">
+                <h1>Periodically</h1>
+                <form action="/add" method="POST">
+                    <input name="word_entry" id="word-entry"
+                        class="form-control input-lg"
+                        placeholder="Enter a word" 
+                    />
+                </form>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
