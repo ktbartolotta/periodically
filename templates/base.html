@@ -1,75 +1,77 @@
 <!doctype html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello, Periodically!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='periodic.css') }}">
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1 jumbotron" style="background-color:lime;">
-                <table>
+        <div class="row text-center">
+            <div id="jumbotron-banner" class="col-md-12 jumbotron" >
+                <table class="text-center">
                     <td>
-                    <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;background-color:white;">
-                        <div style="font-size:.6em">Phosphorus</div>
-                        <div style="font-size:1.25em">15</div>
-                        <div style="font-size:2em;font-weight:bold;">P</div>
-                        <div style="font-size:1em">30.9738</div>
+                    <div class="panel panel-default">
+                        <div id="element-name">Phosphorus</div>
+                        <div id="element-atomic-no">15</div>
+                        <div id="element-symbol">P</div>
+                        <div id="element-atomic-wt">30.9738</div>
                     </div>
                     </td>
                     <td>
-                    <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;background-color:white;">
-                        <div style="font-size:.6em">Erbium</div>
-                        <div style="font-size:1.25em">68</div>
-                        <div style="font-size:2em;font-weight:bold;">Er</div>
-                        <div style="font-size:1em">167.259</div>
+                    <div class="panel panel-default">
+                        <div id="element-name">Erbium</div>
+                        <div id="element-atomic-no">68</div>
+                        <div id="element-symbol">Er</div>
+                        <div id="element-atomic-wt">167.259</div>
                     </div>
                     </td>
                     <td>
-                    <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;background-color:white;">
-                        <div style="font-size:.6em">Iodine</div>
-                        <div style="font-size:1.25em">53</div>
-                        <div style="font-size:2em;font-weight:bold;">I</div>
-                        <div style="font-size:1em">126.9045</div>
+                    <div class="panel panel-default">
+                        <div id="element-name">Iodine</div>
+                        <div id="element-atomic-no">53</div>
+                        <div id="element-symbol">I</div>
+                        <div id="element-atomic-wt">126.9045</div>
                     </div>
                     </td>
                     <td>
-                    <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;background-color:white;">
-                        <div style="font-size:.6em">Oxygen</div>
-                        <div style="font-size:1.25em">8</div>
-                        <div style="font-size:2em;font-weight:bold;">O</div>
-                        <div style="font-size:1em">15.9994</div>
+                    <div class="panel panel-default">
+                        <div id="element-name">Oxygen</div>
+                        <div id="element-atomic-no">8</div>
+                        <div id="element-symbol">O</div>
+                        <div id="element-atomic-wt">15.9994</div>
                     </div>
                     </td>
-                    <td><span style="font-size:4em;font-family:cursive;">d</span></td>
+                    <td><span id="non-element-letter">d</span></td>
                     <td>
-                    <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;background-color:white;">
-                        <div style="font-size:.6em">Iodine</div>
-                        <div style="font-size:1.25em">53</div>
-                        <div style="font-size:2em;font-weight:bold;">I</div>
-                        <div style="font-size:1em">126.9045</div>
-                    </div>
-                    </td>
-                    <td>
-                    <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;background-color:white;">
-                        <div style="font-size:.6em">Carbon</div>
-                        <div style="font-size:1.25em">6</div>
-                        <div style="font-size:2em;font-weight:bold;">C</div>
-                        <div style="font-size:1em">12.0107</div>
+                    <div class="panel panel-default">
+                        <div id="element-name">Iodine</div>
+                        <div id="element-atomic-no">53</div>
+                        <div id="element-symbol">I</div>
+                        <div id="element-atomic-wt">126.9045</div>
                     </div>
                     </td>
                     <td>
-                    <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;background-color:white;">
-                        <div style="font-size:.6em">Aluminum</div>
-                        <div style="font-size:1.25em">13</div>
-                        <div style="font-size:2em;font-weight:bold;">Al</div>
-                        <div style="font-size:1em">26.9815</div>
+                    <div class="panel panel-default">
+                        <div id="element-name">Carbon</div>
+                        <div id="element-atomic-no">6</div>
+                        <div id="element-symbol">C</div>
+                        <div id="element-atomic-wt">12.0107</div>
                     </div>
                     </td>
-                    <td><span style="font-size:4em;font-family:cursive;">ly</span></td>
+                    <td>
+                    <div class="panel panel-default">
+                        <div id="element-name">Aluminum</div>
+                        <div id="element-atomic-no">13</div>
+                        <div id="element-symbol">Al</div>
+                        <div id="element-atomic-wt">26.9815</div>
+                    </div>
+                    </td>
+                    <td><span id="non-element-letter">ly</span></td>
                 </table>
-                <form action="/add" method="POST">
+                <form action="/" method="POST">
                     <input name="word_entry" id="word-entry"
                         class="form-control input-lg"
                         placeholder="Enter a word" 
@@ -78,7 +80,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12">
                 {% block body %}{% endblock %}
             </div>
         </div>

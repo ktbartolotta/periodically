@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block body %}
     {% for word in words %}
-    <table>
+    <table class="text-center">
         <tr>
             {% for w in word %}
             <td>
-                <div style="margin:5px;text-align:center;border-style:solid;padding:2px;width:75px;">
-                    <div style="font-size:.6em">{{ w.name }}</div>
-                    <div style="font-size:1.25em">{{ w.atomic_no }}</div>
-                    <div style="font-size:2em;font-weight:bold;">{{ w.symbol }}</div>
-                    <div style="font-size:1em">{{ w.atomic_wt }}</div>
+                <div class="panel panel-default">
+                    <div id="element-name">{{ w.name }}</div>
+                    <div id="element-atomic-no">{{ w.atomic_no }}</div>
+                    <div id="element-symbol">{{ w.symbol }}</div>
+                    <div id="element-atomic-wt">{{ w.atomic_wt }}</div>
                 </div>
             </td>
             {% endfor %}

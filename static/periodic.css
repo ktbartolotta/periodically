@@ -1,0 +1,32 @@
+.panel.panel-default{
+    margin: 2px;
+    width: 75px;
+    padding: 1px;
+    border-width: medium;
+}
+
+#element-name {
+    font-size: .6em;
+}
+
+#element-atomic-no {
+    font-size: 1.25em;
+}
+
+#element-symbol {
+    font-size: 3em;
+    font-weight:bold;
+}
+
+#element-atomic-wt {
+    font-size: .75em
+}
+
+#non-element-letter {
+    font-size: 4em;
+    font-family: cursive;
+}
+
+#jumbotron-banner {
+    background-color: lime;
+}
