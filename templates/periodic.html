@@ -5,11 +5,11 @@
         <tr>
             {% for w in word %}
             <td>
-                <div class="panel panel-default">
-                    <div id="element-name">{{ w.name }}</div>
-                    <div id="element-atomic-no">{{ w.atomic_no }}</div>
-                    <div id="element-symbol">{{ w.symbol }}</div>
-                    <div id="element-atomic-wt">{{ w.atomic_wt }}</div>
+                <div class="panel panel-default result-element-panel">
+                    <div class="element-name">{{ w.name }}</div>
+                    <div class="element-atomic-no">{{ w.atomic_no }}</div>
+                    <div class="element-symbol">{{ w.symbol }}</div>
+                    <div class="element-atomic-wt">{{ w.atomic_wt }}</div>
                 </div>
             </td>
             {% endfor %}
