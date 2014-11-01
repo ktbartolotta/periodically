@@ -113,7 +113,8 @@ def _periodic_table():
             ['106', '266', 'Seaborgium', 'Sg'],
             ['107', '264', 'Bohrium', 'Bh'],
             ['108', '277', 'Hassium', 'Hs'],
-            ['109', '268', 'Meitnerium', 'Mt']]
+            ['109', '268', 'Meitnerium', 'Mt'],
+            [' ', ' ', ' ', ' ']]
 
 
 def _get_periodic_table():

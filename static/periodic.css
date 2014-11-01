@@ -1,3 +1,7 @@
+.title-table {
+    margin: 5px;
+}
+
 .panel.panel-default.title-element-panel {
     margin: 1px;
     width: 50px;
@@ -43,8 +47,6 @@
 .element-atomic-wt {
     font-size: .75em
 }
-
-
 
 .non-element-letter {
     font-size: 3em;
