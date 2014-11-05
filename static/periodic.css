@@ -1,34 +1,8 @@
-.title-table {
-    margin: 5px;
-}
-
-.panel.panel-default.title-element-panel {
-    margin: 1px;
-    width: 50px;
-}
-
 .panel.panel-default.result-element-panel {
     margin: 2px;
     width: 75px;
     padding: 1px;
     border-width: medium;
-}
-
-.element-name.title-element {
-    font-size: .5em;
-}
-
-.element-atomic-no.title-element {
-    font-size: .8em;
-}
-
-.element-symbol.title-element {
-    font-size: 2em;
-    font-weight:bold;
-}
-
-.element-atomic-wt.title-element {
-    font-size: .5em
 }
 
 .element-name {
