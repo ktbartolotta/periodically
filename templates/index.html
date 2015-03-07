@@ -4,15 +4,15 @@
     <title>Hello, Periodically!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='periodic.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="styles/periodic.css") }}">
 </head>
 <body>
-    <div id='main' class="container">
+    <div id="main" class="container">
         <div class="row">
             <div id="jumbotron-banner" class="col-md-12 jumbotron" >
-                <img src="{{ url_for('static', filename='banner.PNG') }}" class="img-responsive">
+                <img src="{{ url_for('static', filename='images/banner.PNG') }}" class="img-responsive">
                     <div class="input-group">
                         <input data-bind="textInput: word"
                             class="form-control input-lg"
@@ -20,7 +20,7 @@
                             autofocus="autofocus"
                         />
                         <span class="input-group-btn">
-                            <button data-bind="click: get_periodics" class="btn btn-lg">
+                            <button data-bind="click: get_periodics" class="btn btn-primary btn-lg">
                                 Get Periodics</button>
                         </span>
                     </div>
@@ -44,63 +44,6 @@
         </div>
     </div>
 
-    <script>
-        (function (global, $, ko) {
-
-            function ElementModel (atomic_no, atomic_wt, name, symbol) {
-                var self = this;
-
-                self.atomic_no = ko.observable(atomic_no);
-                self.atomic_wt = ko.observable(atomic_wt);
-                self.name = ko.observable(name);
-                self.symbol = ko.observable(symbol);
-            }
-
-            function PeriodicalViewModel () {
-                var self = this;
-
-                self.periodics = ko.observableArray();
-                self.word = ko.observable();
-
-                self.ajax = function (uri, method, data) {
-                    var request = {
-                        url: uri,
-                        type: method,
-                        dataType: 'json',
-                        contentType: 'application/json',
-                        data: data ? ko.toJSON(data) : {}
-                    };
-                    return $.ajax(request);
-                };
-
-                self.get_periodics = function () {
-                    self.ajax(
-                    "/periodic/" + self.word(),
-                    'GET'
-                )
-                    .done(function (data) {
-                        self.periodics(
-                            $.each(data.periodics, function(per) {
-                                return $.map(per, function(p) {
-                                    console.log(JSON.stringify(p));
-                                    return new ElementModel(
-                                        p.atomic_no,
-                                        p.atomic_wt,
-                                        p.name,
-                                        p.symbol
-                                    );
-                                });
-                            })
-                        );
-                    })
-                    .fail(function (xhr, status, error) {
-                        console.log(status + ' ' + error);
-                    });
-                };
-            };
-
-            ko.applyBindings(new PeriodicalViewModel(), $('#main')[0]);
-        })(typeof window !== 'undefined' ? window : this, jQuery, ko);
-    </script>
+    <script src="{{ url_for("static", filename="js/periodics.js") }}"></script>
 </body>
 </html>
