@@ -27,7 +27,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 table-responsive">
+
+            <div data-bind="component: {
+                            name: responseComp,
+                            params: {resp: resp}
+            }">
+
+            <!-- <div class="col-md-12 table-responsive">
                 <table data-bind="foreach: periodics" class="text-center title-table">
                     <tr data-bind="foreach: $data">
                         <td>
@@ -41,6 +47,9 @@
                     </tr>
                 </table>
             </div>
+ -->
+            </div>
+
         </div>
     </div>
 
