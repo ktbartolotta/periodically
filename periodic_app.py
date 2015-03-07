@@ -14,7 +14,15 @@ def index_page():
 @app.route("/periodic/<word>")
 def get_word(word):
 
-    return jsonify({'periodics': periodic.get_periodics(word)})
+    periodics = periodic.get_periodics(word)
+    if len(periodics) > 0:
+        return jsonify({'periodics': periodics})
+    else:
+        return jsonify({
+            'no_periodics': {
+                'suggestions': ['jim', 'bob', 'amy']
+            }
+        })
 
 
 if __name__ == "__main__":
