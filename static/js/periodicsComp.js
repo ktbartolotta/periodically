@@ -1,4 +1,4 @@
-define(["knockout"], function (ko) {
+define(["knockout", "elementModel"], function (ko, ElementModel) {
 
     function PeriodicsCompViewModel(params) {
         var self = this;

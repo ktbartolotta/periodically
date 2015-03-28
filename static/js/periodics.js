@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'knockout', 'elementModel'], 
-    function ($, ko, ElementModel, PeriodicsCompViewModel) {
+    ['jquery', 'knockout'], 
+    function ($, ko) {
 
         function PeriodicalViewModel () {
             var self = this;
