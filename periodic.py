@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-import pprint
-
 
 def _periodic_table():
 
@@ -134,6 +132,25 @@ def _get_periodic_table():
     return table
 
 
+def get_working_periodics_word_list():
+
+    word_list = ''
+    with open("pwords") as file:
+        word_list = set([word.strip().lower() for word in file.readlines()])
+    return sorted(list(word_list))
+
+
+def find_twenty_similar_words(word):
+
+    word_list = get_working_periodics_word_list()
+    sim_words = ''
+    for i, w in enumerate(word_list):
+        if w >= word.lower():
+            sim_words = word_list[i - 5:i + 5]
+            break
+    return sim_words
+
+
 def build_string(word):
 
     matches = []
@@ -178,4 +195,4 @@ def main(word):
 
 
 if __name__ == "__main__":
-    pprint.pprint(get_periodics("bacon"))
+    print(find_twenty_similar_words('bacon'))

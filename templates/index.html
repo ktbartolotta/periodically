@@ -2,11 +2,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello, Periodically!</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="styles/periodic.css") }}">
+    <script data-main="{{ url_for("static", filename="js/main.js") }}" 
+        src="{{ url_for("static", filename="js/require.js") }}"></script>
 </head>
 <body>
     <div id="main" class="container">
@@ -30,12 +29,10 @@
 
             <div data-bind="component: {
                             name: responseComp,
-                            params: {resp: resp}
-            }"></div>
+                            params: {resp: resp, input: word}}">
+            </div>
 
         </div>
     </div>
-
-    <script src="{{ url_for("static", filename="js/periodics.js") }}"></script>
 </body>
 </html>

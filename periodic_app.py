@@ -20,7 +20,7 @@ def get_word(word):
     else:
         return jsonify({
             'no_periodics': {
-                'suggestions': ['jim', 'bob', 'amy']
+                'suggestions': periodic.find_twenty_similar_words(word)
             }
         })
 
