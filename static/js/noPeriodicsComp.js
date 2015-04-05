@@ -1,17 +1,18 @@
-define(["knockout"], function (ko) {
+define(
+    ["knockout", "jquery", "suggestionModel"], 
+    function (ko, $, SuggestionModel) {
 
-    function NoPeriodicsCompViewModel (params) {
-        var self = this;
+        function NoPeriodicsCompViewModel (params) {
+            var self = this;
 
-        self.resp = params.resp;
-        self.input = params.input;
-        self.words = ko.observableArray(self.resp.no_periodics.suggestions);
+            self.suggestions = params.resp.no_periodics.suggestions;
+            self.words = ko.observableArray(
+                $.map(self.suggestions, function (s) {
+                    return new SuggestionModel (s);
+                })
+            );
+        };
 
-        self.get_periodics = function (word) {
-            self.input(word);
-        }
-    };
-
-    return NoPeriodicsCompViewModel;
+        return NoPeriodicsCompViewModel;
 
 });

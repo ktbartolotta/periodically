@@ -1,18 +1,17 @@
 <div class="col-md-12">
     <h2>No Love? Oh, well.  Here are some suggestions that work. ;)</h2>
-    <ul data-bind="foreach: words" class="list-group">
-        <li class="list-group-item">
-            <a data-bind="text: $data,
-                    attr: {
-                        href: '#' + $data,
-                        'aria-controls': $data
-                    }"
-                data-toggle="collapse" aria-expanded="true"></a>
-            <div class="collapse" data-bind="attr: { id: $data }">
-                <div class="well">
-                ...
+    <div data-bind="foreach: words" class="list-group">
+        <div class="container list-group-item" >
+            <a href="#" data-bind="text: word, click: toggleVisible"></a>
+            <div data-bind="visible: isVisible">
+                <div class="panel">
+                    <div data-bind="component: {
+                            name: responseComp,
+                            params: { resp: resp }
+                        }">
+                    </div>
                 </div>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>

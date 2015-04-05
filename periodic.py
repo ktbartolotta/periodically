@@ -146,7 +146,7 @@ def find_twenty_similar_words(word):
     sim_words = ''
     for i, w in enumerate(word_list):
         if w >= word.lower():
-            sim_words = word_list[i - 5:i + 5]
+            sim_words = word_list[i - 10:i + 10]
             break
     return sim_words
 
