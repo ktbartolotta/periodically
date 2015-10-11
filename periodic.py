@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import pwords
 
 
 def _periodic_table():
@@ -132,17 +133,9 @@ def _get_periodic_table():
     return table
 
 
-def get_working_periodics_word_list():
-
-    word_list = ''
-    with open("pwords") as file:
-        word_list = set([word.strip().lower() for word in file.readlines()])
-    return sorted(list(word_list))
-
-
 def find_twenty_similar_words(word):
 
-    word_list = get_working_periodics_word_list()
+    word_list = pwords.get_pwords()
     sim_words = ''
     for i, w in enumerate(word_list):
         if w >= word.lower():
@@ -195,4 +188,5 @@ def main(word):
 
 
 if __name__ == "__main__":
-    print(find_twenty_similar_words('bacon'))
+
+    main()
